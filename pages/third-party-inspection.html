@@ -16,8 +16,8 @@
 :root {
   /* Black & White Palette */
   --black: #000000;
-  --black-rich: #0a0a0a;
-  --black-card: #141414;
+  --black-rich: #172A46;
+  --black-card: #172A46;
   --white: #ffffff;
 
   /* Grayscale Neutrals */
@@ -30,7 +30,7 @@
   --gray-100: #f5f5f5;
 
   /* Backgrounds */
-  --bg-dark: #000000;
+  --bg-dark: #172A46;
   --bg-light: #ffffff;
 }
 
@@ -61,7 +61,7 @@ ul { margin: 0; padding: 0; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.95);
+  background: rgba(23,42,70, 0.95);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -136,7 +136,7 @@ ul { margin: 0; padding: 0; }
   transition: all .2s ease;
 }
 .nav-cta:hover {
-  background: #000;
+  background: var(--ink-blue);
   color: #fff;
 }
 .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: .5rem; }
@@ -155,7 +155,7 @@ ul { margin: 0; padding: 0; }
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .page-hero.page-hero {
-  background-image: linear-gradient(90deg, rgba(0,0,0,.76), rgba(0,0,0,.42)), url("../img/tpi.png");
+  background-image: linear-gradient(90deg, rgba(23,42,70,.76), rgba(23,42,70,.42)), url("../img/tpi.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -230,7 +230,7 @@ ul { margin: 0; padding: 0; }
 .scope-item .icon {
   min-width: 48px;
   height: 48px;
-  background: var(--black);
+  background: var(--ink-blue);
   color: var(--white);
   border-radius: 50%;
   display: flex;
@@ -280,13 +280,10 @@ ul { margin: 0; padding: 0; }
   overflow: hidden;
 }
 .industry-card .media {
-  background: linear-gradient(135deg, #111111, #222222);
+  display: block;
+  width: 100%;
   height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255,255,255,0.85);
-  font-weight: 500;
+  object-fit: cover;
 }
 .industry-card .caption {
   padding: 1.25rem;
@@ -307,7 +304,7 @@ ul { margin: 0; padding: 0; }
 /* CTA Strip */
 .cta-strip {
   padding: 4rem 0;
-  background: var(--black);
+  background: var(--ink-blue);
   color: var(--white);
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -325,7 +322,7 @@ ul { margin: 0; padding: 0; }
   display: inline-block;
   transition: all 0.3s ease;
 }
-.button:hover { background: #000; color: #fff; }
+.button:hover { background: var(--ink-blue); color: #fff; }
 
 /* Footer */
 .footer {
@@ -443,7 +440,7 @@ ul { margin: 0; padding: 0; }
 </section>
 
 <!-- Inspection Services -->
-<section class="main-content" id="inspection-services" style="background:var(--black); color:var(--white); border-top:1px solid rgba(255,255,255,0.15); border-bottom:1px solid rgba(255,255,255,0.15);">
+<section class="main-content" id="inspection-services" style="background:var(--ink-blue); color:var(--white); border-top:1px solid rgba(255,255,255,0.15); border-bottom:1px solid rgba(255,255,255,0.15);">
   <div class="container">
     <div class="section-head" style="color:var(--white);">
       <h2 style="color:var(--white);">Comprehensive Inspection Services</h2>
@@ -561,42 +558,42 @@ ul { margin: 0; padding: 0; }
     </div>
     <div class="industry-grid">
       <article class="industry-card">
-        <div class="media">Manufacturing</div>
+        <img class="media" src="../img/Engineering%20%26%20Manufacturing.jpg.jpeg" alt="Engineering and manufacturing">
         <div class="caption">
           <h3>Manufacturing</h3>
           <p>From raw materials to finished goods, we ensure quality at every stage.</p>
         </div>
       </article>
       <article class="industry-card">
-        <div class="media">Automotive</div>
+        <img class="media" src="../img/Automotive%20%26%20Auto%20Components.jpg.jpeg" alt="Automotive and auto components">
         <div class="caption">
           <h3>Automotive</h3>
           <p>Meeting IATF 16949 requirements with rigorous quality inspection.</p>
         </div>
       </article>
       <article class="industry-card">
-        <div class="media">Aerospace</div>
+        <img class="media" src="../img/Aerospace%20%26%20Precision%20Engineering.jpg.jpeg" alt="Aerospace and precision engineering">
         <div class="caption">
           <h3>Aerospace</h3>
           <p>Precision inspection for AS9100 compliance and safety-critical components.</p>
         </div>
       </article>
       <article class="industry-card">
-        <div class="media">Electronics</div>
+        <img class="media" src="../img/IT%20%26%20Service%20Organizations.jpg.jpeg" alt="IT and service organizations">
         <div class="caption">
           <h3>Electronics</h3>
           <p>Quality assurance for sensitive components and complex assemblies.</p>
         </div>
       </article>
       <article class="industry-card">
-        <div class="media">Construction</div>
+        <img class="media" src="../img/Process%20%26%20Industrial%20Sectors.jpg.jpeg" alt="Process and industrial sectors">
         <div class="caption">
           <h3>Construction</h3>
           <p>Material inspection and quality verification for building projects.</p>
         </div>
       </article>
       <article class="industry-card">
-        <div class="media">Food & Beverage</div>
+        <img class="media" src="../img/FMCG%20%26%20Food%20Processing.jpg.jpeg" alt="FMCG and food processing">
         <div class="caption">
           <h3>Food &amp; Beverage</h3>
           <p>Quality and safety inspection for food processing and packaging.</p>

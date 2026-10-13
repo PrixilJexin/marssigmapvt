@@ -22,7 +22,7 @@
 }
 
 body { background: var(--white); color: var(--charcoal); }
-.navbar { background: rgba(0, 0, 0, .6); }
+.navbar { background: rgba(23,42,70, .6); }
 .nav-logo span { color: var(--on-dark-muted); }
 .nav-logo { display: flex; align-items: center; }
 .nav-logo img {
@@ -71,17 +71,17 @@ body { background: var(--white); color: var(--charcoal); }
 .button:hover { background: var(--ink-blue); color: var(--white); border-color: var(--ink-blue); }
 .nav-link:hover, .nav-link.active { color: var(--white); }
 
-/* Service pages contain some dark sections as inline styles; keep those in the brand maroon. */
-section.main-content[style*="background:var(--black)"],
-section.main-content[style*="background: var(--black)"],
+/* Service pages contain dark sections as inline styles; use ink blue consistently. */
+section.main-content[style*="background:var(--ink-blue)"],
+section.main-content[style*="background: var(--ink-blue)"],
 section.main-content[style*="background:var(--bg-dark)"],
 section.main-content[style*="background: var(--bg-dark)"] {
-  background-color: var(--maroon) !important;
+  background-color: var(--ink-blue) !important;
 }
 
 @media (max-width: 991px) {
   .nav-menu {
-    background: #0a0a0a;
+    background: var(--ink-blue);
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }

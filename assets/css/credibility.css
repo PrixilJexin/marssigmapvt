@@ -1,0 +1,43 @@
+/* Experience & Credibility band: all selectors remain scoped to #credibility. */
+#credibility { position: relative; isolation: isolate; overflow: hidden; padding: 5rem 0; color: #fff; background: radial-gradient(ellipse at 50% 40%,#263d5b 0%,#172a46 57%,#101f35 100%); }
+#credibility::before { content: ""; position: absolute; z-index: -1; inset: 0; opacity: .12; background-image: linear-gradient(rgba(255,255,255,.2) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.2) 1px,transparent 1px); background-size: 44px 44px; mask-image: linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent); }
+#credibility::after { content: ""; position: absolute; z-index: -1; width: 32rem; height: 32rem; left: calc(50% - 16rem); top: 2rem; border-radius: 50%; background: radial-gradient(circle,rgba(116,154,204,.17),transparent 70%); pointer-events: none; }
+#credibility .cred-container { position: relative; z-index: 1; }
+#credibility .cred-heading { position: relative; margin: 0 0 2.2rem; text-align: center; }
+#credibility .cred-heading .hero-eyebrow { color: #fff; margin-bottom: .65rem; font-weight: 400; }
+#credibility .cred-heading h2 { color: #fff; font-size: clamp(1.65rem,3vw,2.25rem); line-height: 1.2; font-weight: 400; }
+#credibility .cred-stats { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1rem; margin: 0; padding: 0; list-style: none; }
+#credibility .cred-card { --cred-tilt-x: 0deg; --cred-tilt-y: 0deg; position: relative; min-width: 0; min-height: 16rem; padding: 1.5rem 1rem 1.3rem; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.2); border-radius: 16px; background: linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.045)); box-shadow: inset 0 1px 0 rgba(255,255,255,.1),0 10px 28px rgba(3,12,25,.15); text-align: center; transform: perspective(900px) translateY(0) scale(1) rotateX(var(--cred-tilt-x)) rotateY(var(--cred-tilt-y)); transform-style: preserve-3d; transition: opacity .65s ease,filter .65s ease,transform .35s ease,border-color .35s ease,box-shadow .35s ease; }
+#credibility .cred-card::after { content: ""; position: absolute; inset: -30% auto -30% -75%; width: 48%; background: linear-gradient(100deg,transparent,rgba(255,255,255,.11),transparent); transform: skewX(-18deg); pointer-events: none; }
+#credibility.cred-visible .cred-card::after { animation: cred-shine 7s ease-in-out 2s infinite; }
+@keyframes cred-shine { 0%,70%,100% { left: -75%; } 82% { left: 135%; } }
+#credibility .cred-card:hover { transform: perspective(900px) translateY(-6px) scale(1) rotateX(var(--cred-tilt-x)) rotateY(var(--cred-tilt-y)); border-color: rgba(255,255,255,.72); box-shadow: inset 0 1px 0 rgba(255,255,255,.18),0 16px 35px rgba(3,12,25,.3),0 0 22px rgba(255,255,255,.12); }
+#credibility .cred-icon { width: 3rem; height: 3rem; margin-bottom: .85rem; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; background: rgba(255,255,255,.1); color: #e1eaf5; box-shadow: inset 0 1px 0 rgba(255,255,255,.12); transition: transform .35s ease,color .35s ease; }
+#credibility .cred-icon svg { width: 1.5rem; height: 1.5rem; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+#credibility .cred-card:hover .cred-icon { color: #fff; transform: rotate(-5deg) scale(1.06); }
+#credibility.cred-visible .cred-icon { animation: cred-icon-pop .55s cubic-bezier(.2,.8,.2,1) both; animation-delay: var(--cred-delay,0ms); }
+@keyframes cred-icon-pop { from { opacity: .45; transform: scale(.72) rotate(-12deg); } to { opacity: 1; transform: scale(1) rotate(0); } }
+#credibility .cred-value { min-height: 1.15em; display: inline-flex; justify-content: center; align-items: baseline; color: #fff; font-family: Montserrat,Inter,sans-serif; font-size: clamp(2.2rem,4vw,3.25rem); font-weight: 500; line-height: 1.1; letter-spacing: -.045em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+#credibility .cred-count { min-width: 2ch; }
+#credibility .cred-suffix { color: #fff; margin-left: .06em; font-weight: 400; }
+#credibility .cred-label { max-width: 16ch; margin-top: .65rem; color: #fff; font-size: .74rem; font-weight: 400; line-height: 1.4; letter-spacing: .075em; text-transform: uppercase; }
+#credibility .cred-rule { width: 72%; max-width: 9rem; height: 2px; margin-top: 1rem; overflow: hidden; border-radius: 2px; background: rgba(255,255,255,.18); }
+#credibility .cred-rule::after { content: ""; width: 100%; height: 100%; display: block; transform: scaleX(var(--cred-progress,1)); transform-origin: left; background: linear-gradient(90deg,#829bbc,#fff); }
+#credibility.cred-ready .cred-card { opacity: 0; filter: blur(5px); transform: perspective(900px) translateY(20px) scale(.96) rotateX(0) rotateY(0); }
+#credibility.cred-ready.cred-visible .cred-card { opacity: 1; filter: blur(0); transform: perspective(900px) translateY(0) scale(1) rotateX(var(--cred-tilt-x)) rotateY(var(--cred-tilt-y)); transition-delay: var(--cred-delay,0ms); }
+#credibility .cred-card.cred-complete .cred-value { animation: cred-number-pulse .55s ease-out 1; }
+#credibility .cred-link { width: fit-content; margin: 1.7rem auto 0; display: flex; align-items: center; gap: .6rem; color: #fff; text-decoration: none; font-size: .9rem; font-weight: 400; text-underline-offset: 4px; }
+#credibility .cred-link span { color: #fff; transition: transform .2s ease; }
+#credibility .cred-link:hover { text-decoration: underline; }
+#credibility .cred-link:hover span { transform: translateX(3px); }
+#credibility .cred-link:focus-visible { outline: 3px solid #fff; outline-offset: 5px; border-radius: 2px; }
+#credibility .cred-ambient { position: absolute; z-index: -1; width: 12rem; height: 12rem; border-radius: 50%; filter: blur(35px); opacity: .16; pointer-events: none; animation: cred-float 16s ease-in-out infinite alternate; }
+#credibility .cred-ambient-one { top: 12%; left: 5%; background: #789bc5; }
+#credibility .cred-ambient-two { right: 8%; bottom: 8%; width: 15rem; height: 15rem; background: #789bc5; animation-delay: -5s; }
+#credibility .cred-ambient-three { top: 34%; left: 45%; width: 8rem; height: 8rem; background: #7292b5; animation-delay: -9s; }
+@keyframes cred-float { to { transform: translate3d(25px,-18px,0) scale(1.08); } }
+#credibility .cred-quality-mark { position: absolute; right: 2%; bottom: 1%; width: clamp(9rem,18vw,15rem); opacity: .12; fill: none; stroke: #dae5f2; stroke-width: 1.5; pointer-events: none; }
+@media (max-width: 1023px) { #credibility .cred-stats { grid-template-columns: repeat(2,minmax(0,1fr)); gap: .9rem; } #credibility .cred-card { min-height: 14rem; } }
+@media (max-width: 639px) { #credibility { padding: 3.5rem 0; } #credibility .cred-heading { margin-bottom: 1.5rem; } #credibility .cred-stats { grid-template-columns: minmax(0,1fr); gap: .7rem; } #credibility .cred-card { min-height: 10rem; padding: 1rem; display: grid; grid-template-columns: 3rem minmax(0,1fr); grid-template-rows: auto auto auto; justify-items: start; align-content: center; column-gap: .9rem; text-align: left; } #credibility .cred-icon { grid-column: 1; grid-row: 1 / 4; margin: 0; } #credibility .cred-value { grid-column: 2; grid-row: 1; font-size: clamp(2rem,10vw,2.75rem); } #credibility .cred-rule { grid-column: 2; grid-row: 2; margin-top: .45rem; } #credibility .cred-label { grid-column: 2; grid-row: 3; max-width: none; margin-top: .45rem; font-size: .7rem; } #credibility .cred-ambient-three { display: none; } #credibility .cred-quality-mark { right: -1rem; bottom: -.5rem; } }
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) { #credibility.cred-visible .cred-card { will-change: transform; } }
+@media (prefers-reduced-motion: reduce) { #credibility, #credibility * { scroll-behavior: auto !important; animation: none !important; transition: none !important; } #credibility .cred-card, #credibility.cred-ready .cred-card, #credibility.cred-ready.cred-visible .cred-card { opacity: 1; filter: none; transform: none; } #credibility .cred-rule::after { transform: scaleX(1) !important; } }

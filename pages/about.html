@@ -15,7 +15,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 :root {
   --black: #000000;
-  --black-rich: #0a0a0a;
+  --black-rich: #172A46;
   --white: #ffffff;
   --gray-700: #404040;
   --gray-500: #737373;
@@ -25,7 +25,7 @@ html { scroll-behavior: smooth; }
 body { margin:0; background:#fff; color:#000; font-family:Inter, sans-serif; font-size:16px; line-height:1.5; }
 h1,h2,h3,p { margin:0; }
 .container { max-width:1280px; margin:0 auto; padding:0 1.5rem; }
-.navbar { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(0,0,0,.95); border-bottom:1px solid rgba(255,255,255,0.1); }
+.navbar { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(23,42,70,.95); border-bottom:1px solid rgba(255,255,255,0.1); }
 .nav-container { max-width:1280px; margin:0 auto; padding:0 1.5rem; height:4.5rem; display:flex; align-items:center; justify-content:space-between; gap:2rem; }
 .nav-logo { color:#fff; text-decoration:none; font-size:1.0625rem; font-weight:600; letter-spacing:.08em; }
 .nav-logo span { color:var(--gray-500); font-weight:300; }
@@ -33,7 +33,7 @@ h1,h2,h3,p { margin:0; }
 .nav-link { color:#fff; text-decoration:none; font-size:.9375rem; opacity:.85; white-space:nowrap; }
 .nav-link:hover { opacity:1; text-decoration:underline; }
 .nav-cta { color:#000; background:#fff; border:1px solid #fff; border-radius:6.25rem; padding:.7rem 1.5rem; text-decoration:none; font-size:.9375rem; font-weight:500; transition:all .2s ease; }
-.nav-cta:hover { background:#000; color:#fff; }
+.nav-cta:hover { background:var(--ink-blue); color:#fff; }
 .page-hero { background:var(--black-rich); padding:10rem 0 4rem; border-bottom:1px solid rgba(255,255,255,0.1); }
 .page-hero h1 { color:#fff; font-size:3rem; font-weight:300; line-height:1.15; max-width:24ch; }
 .page-hero p { color:rgba(255,255,255,.85); font-size:1.125rem; line-height:1.6; margin-top:1.25rem; max-width:46rem; }

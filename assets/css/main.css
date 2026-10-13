@@ -5,8 +5,8 @@
 :root {
   /* Black & White Palette */
   --black: #000000;
-  --black-rich: #0a0a0a;
-  --black-card: #141414;
+  --black-rich: #172A46;
+  --black-card: #172A46;
   --white: #ffffff;
 
   /* Grayscale Neutrals */
@@ -19,7 +19,7 @@
   --gray-100: #f5f5f5;
 
   /* Backgrounds */
-  --bg-dark: #000000;
+  --bg-dark: #172A46;
   --bg-light: #ffffff;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .ms-section.dark {
-  background-color: var(--black);
+  background-color: var(--ink-blue);
   color: var(--white);
 }
 
@@ -39,7 +39,7 @@
 }
 
 .ms-section.accent {
-  background-color: var(--black);
+  background-color: var(--ink-blue);
   color: var(--white);
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -248,7 +248,7 @@
 
 /* ========== Placeholder imagery ========== */
 .ms-ph {
-  background: linear-gradient(135deg, #0a0a0a, #262626);
+  background: linear-gradient(135deg, var(--ink-blue), #263A55);
   position: relative;
   overflow: hidden;
 }
@@ -265,7 +265,7 @@
 }
 
 .ms-ph.warm {
-  background: linear-gradient(135deg, #111111, #222222);
+  background: linear-gradient(135deg, var(--ink-blue), #233751);
 }
 
 .ms-ph.light {
