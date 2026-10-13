@@ -51,6 +51,9 @@ body { background: var(--white); color: var(--charcoal); }
   background-repeat: no-repeat;
 }
 .page-hero > .container { width: 100%; }
+.contact-page-hero {
+  background-image: linear-gradient(rgba(20, 0, 5, 0.48), rgba(20, 0, 5, 0.58)), url("../../img/contact.png");
+}
 .footer {
   background-image: url("../../img/footer-bg.png");
   background-position: center;
