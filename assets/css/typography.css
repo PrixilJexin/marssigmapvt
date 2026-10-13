@@ -12,3 +12,12 @@ body h5,
 body h6 {
   font-family: 'Playfair Display', serif !important;
 }
+
+.nav-logo {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: clamp(.75rem, 1.1vw, .95rem);
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -410,6 +410,7 @@ ul { margin: 0; padding: 0; }
 
 <link href="../assets/css/navbar.css" rel="stylesheet" type="text/css">
 <link href="../assets/css/brand-theme.css" rel="stylesheet" type="text/css">
+  <link href="../assets/css/responsive.css" rel="stylesheet">
 </head>
 <body>
 
@@ -417,7 +418,7 @@ ul { margin: 0; padding: 0; }
 <header>
   <nav class="navbar" aria-label="Main navigation">
     <div class="nav-container">
-      <a href="../index.html" class="nav-logo" aria-label="Mars Sigma Solutions Home"><img src="../img/logoms.png" alt="Mars Sigma Solutions"></a>
+      <a href="../index.html" class="nav-logo" aria-label="Mars Sigma Solutions Home">MARS SIGMA SOLUTIONS</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
         <span></span><span></span>
       </button>
@@ -615,8 +616,8 @@ ul { margin: 0; padding: 0; }
 document.addEventListener('DOMContentLoaded', function() {
   var serviceSelect = document.getElementById('service');
   var requestedService = new URLSearchParams(window.location.search).get('service');
-  if (serviceSelect && (requestedService === 'iso-9001-2026-transition' || requestedService === 'iso-consulting')) {
-    serviceSelect.value = requestedService;
+  if (serviceSelect && ['iso-9001-2026-transition', 'iso-consulting', 'business-transformation'].indexOf(requestedService) !== -1) {
+    serviceSelect.value = requestedService === 'business-transformation' ? 'transformation' : requestedService;
   }
   // Form handling
   var form = document.getElementById('enquiryForm');

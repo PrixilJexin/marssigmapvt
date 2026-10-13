@@ -1,0 +1,142 @@
+/* Shared responsive guardrails for every page. */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html,
+body { width: 100%; max-width: 100%; overflow-x: clip; }
+body { min-width: 320px; }
+img,
+video,
+iframe,
+svg { max-width: 100%; }
+img,
+video { height: auto; }
+main,
+section,
+article,
+aside,
+.container,
+.nav-container,
+[class*="-grid"] > *,
+[class*="-row"] > * { min-width: 0; }
+
+.nav-logo { min-width: 0; flex: 0 1 auto; font-size: clamp(.72rem, 1.1vw, .95rem); }
+.nav-container { gap: clamp(.65rem, 2vw, 2rem); }
+.container { width: 100%; }
+button,
+input,
+select,
+textarea { max-width: 100%; }
+input,
+select,
+textarea { min-width: 0; }
+table { display: block; max-width: 100%; overflow-x: auto; }
+pre { max-width: 100%; overflow-x: auto; }
+
+@media (max-width: 1100px) {
+  .nav-container { gap: 1rem; }
+  .nav-toggle { display: block; flex: 0 0 auto; }
+  .nav-menu {
+    position: fixed;
+    top: 4.5rem;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    max-height: calc(100dvh - 4.5rem);
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 1rem 1.5rem 1.5rem;
+    background: var(--ink-blue, #1d2a44);
+    border-bottom: 1px solid rgba(255,255,255,.18);
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease;
+  }
+  .nav-menu.nav-menu-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+  .nav-link { display: flex; width: 100%; min-height: 2.75rem; align-items: center; white-space: normal; }
+  .nav-cta { align-self: flex-start; margin-top: .75rem; }
+}
+
+@media (max-width: 991px) {
+  .who-grid,
+  .founder-grid,
+  .contact-grid,
+  .together-grid { grid-template-columns: minmax(0, 1fr); }
+  .card-grid,
+  .process-grid,
+  .training-grid,
+  .methodology-grid,
+  .standards-grid,
+  .industry-grid,
+  .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .container { padding-right: 1.5rem; padding-left: 1.5rem; }
+}
+
+@media (max-width: 767px) {
+  .container { padding-right: 1.125rem; padding-left: 1.125rem; }
+  .main-content,
+  .content { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  .section-head { max-width: 100%; margin-bottom: 2rem; }
+  .section-head h2,
+  .content h2 { font-size: clamp(1.6rem, 6vw, 2rem); }
+  .card-grid,
+  .process-grid,
+  .training-grid,
+  .methodology-grid,
+  .standards-grid,
+  .industry-grid,
+  .service-grid,
+  .who-grid,
+  .founder-grid,
+  .contact-grid,
+  .together-grid,
+  .new-card-grid,
+  .iso-grid,
+  .success-grid,
+  .testimonial-grid { grid-template-columns: minmax(0, 1fr); }
+  .card,
+  .service-card,
+  .training-card,
+  .industry-card { min-width: 0; }
+  .media,
+  .industry-card img { max-width: 100%; }
+  .form-row { grid-template-columns: minmax(0, 1fr); }
+  .cta-strip { padding: 3rem 0; }
+  .cta-strip .container { align-items: stretch; }
+  .cta-actions,
+  .hero-actions { flex-wrap: wrap; }
+  .button { max-width: 100%; }
+  .tag-list li { white-space: normal; }
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+}
+
+@media (max-width: 520px) {
+  .container { padding-right: 1rem; padding-left: 1rem; }
+  .page-hero { min-height: 0; padding: 7rem 0 3rem; }
+  .page-hero h1,
+  .page-hero .container h1 { font-size: clamp(1.85rem, 8vw, 2.5rem); }
+  .page-hero p,
+  .page-hero .container p { font-size: 1rem; }
+  .main-content,
+  .content { padding-top: 3rem; padding-bottom: 3rem; }
+  .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+  .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
+  .footer-bottom nav { justify-content: center; }
+  .industry-carousel-controls { justify-content: center; flex-wrap: wrap; }
+  .hero-actions { align-items: stretch; }
+  .hero-actions .button,
+  .cta-actions .button { width: 100%; justify-content: center; }
+  input,
+  select,
+  textarea { font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}

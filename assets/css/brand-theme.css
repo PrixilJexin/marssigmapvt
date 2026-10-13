@@ -96,6 +96,10 @@ img, video, iframe { max-width: 100%; }
 .nav-logo img { flex: 0 1 auto; }
 .nav-menu { min-width: 0; }
 .card, .industry-card, .training-card, .contact-item, .content { min-width: 0; }
+/* Let long labels and narrow grid children wrap instead of widening the page. */
+main, section, article, aside, .container, .nav-container,
+[class*="-grid"] > *, [class*="-row"] > * { min-width: 0; }
+p, li, a, button, label, h1, h2, h3, h4 { overflow-wrap: anywhere; }
 table { display: block; width: 100%; max-width: 100%; overflow-x: auto; }
 pre { max-width: 100%; overflow-x: auto; }
 
@@ -117,6 +121,8 @@ pre { max-width: 100%; overflow-x: auto; }
   .nav-container { gap: .75rem; padding-left: 1rem; padding-right: 1rem; }
   .nav-logo img { height: 2.45rem; max-width: 10rem; }
   .nav-menu { padding: 1rem 1.125rem; }
+  .nav-link { min-height: 2.75rem; display: flex; align-items: center; }
+  .nav-cta { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; margin-top: .75rem; }
   .page-hero {
     min-height: 82svh;
     padding: 7rem 0 3.5rem;
@@ -160,6 +166,8 @@ pre { max-width: 100%; overflow-x: auto; }
   .industry-carousel-controls { justify-content: center; flex-wrap: wrap; }
   .cta-strip .container { flex-direction: column; text-align: center; }
   input, select, textarea, button { max-width: 100%; }
+  input, select, textarea { font-size: 16px; }
+  .card, .training-card, .contact-item { overflow-wrap: anywhere; }
 }
 
 @media (prefers-reduced-motion: reduce) {
