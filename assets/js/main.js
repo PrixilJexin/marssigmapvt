@@ -1,13 +1,34 @@
 // Mars Sigma Solutions — shared site scripts
 document.addEventListener('DOMContentLoaded', function () {
-  // Mobile navbar burger
   var toggle = document.querySelector('.nav-toggle');
-  var menu = document.getElementById('nav-menu');
+  var menu = toggle && document.getElementById(toggle.getAttribute('aria-controls'));
+
   if (toggle && menu) {
-    toggle.addEventListener('click', function () {
-      var open = menu.classList.toggle('nav-menu-open');
-      toggle.setAttribute('aria-expanded', open);
+    function setMenuOpen(open) {
+      menu.classList.toggle('nav-menu-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
       toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+
+    toggle.addEventListener('click', function () {
+      setMenuOpen(!menu.classList.contains('nav-menu-open'));
+    });
+
+    menu.addEventListener('click', function (event) {
+      if (event.target.closest('a')) setMenuOpen(false);
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && menu.classList.contains('nav-menu-open')) {
+        setMenuOpen(false);
+        toggle.focus();
+      }
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!toggle.contains(event.target) && !menu.contains(event.target)) {
+        setMenuOpen(false);
+      }
     });
   }
 
@@ -16,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
   dropdowns.forEach(function (dropdown) {
     var link = dropdown.querySelector('.nav-link');
     var menu = dropdown.querySelector('.dropdown-menu');
+    if (!link || !menu) return;
 
     // Desktop hover
     dropdown.addEventListener('mouseenter', function () {
@@ -38,16 +60,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Close mobile menu when clicking outside
-  document.addEventListener('click', function (e) {
-    var toggle = document.querySelector('.nav-toggle');
-    var menu = document.getElementById('nav-menu');
-    if (toggle && menu) {
-      var isClickInside = toggle.contains(e.target) || menu.contains(e.target);
-      if (!isClickInside && menu.classList.contains('nav-menu-open')) {
-        menu.classList.remove('nav-menu-open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-    }
-  });
 });

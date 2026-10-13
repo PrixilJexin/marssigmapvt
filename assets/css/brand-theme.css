@@ -77,7 +77,11 @@ section.main-content[style*="background: var(--bg-dark)"] {
 }
 
 @media (max-width: 991px) {
-  .nav-menu { background: rgba(84,17,32,.98); }
+  .nav-menu {
+    background: #0a0a0a;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
 }
 
 /* Consistent tablet and phone layouts across site pages. */
