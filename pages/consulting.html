@@ -1,6 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="../assets/css/typography.css" rel="stylesheet">
 <meta charset="utf-8">
 <title>Consulting - Mars Sigma Solutions Pvt Ltd</title>
 <meta name="description" content="Consulting services including ISO Certification, Result-Oriented Services, and Supplier Development.">
@@ -12,19 +14,31 @@
 <link href="../assets/css/main.css" rel="stylesheet" type="text/css">
 <style>
 :root {
-  --maroon-red: #7A1E26;
-  --ink-blue: #0F2747;
-  --deep-navy-black: #0A0F1A;
-  --charcoal: #2B2B2B;
-  --slate-gray: #6B7280;
-  --light-gray: #E5E7EB;
+  /* Black & White Palette */
+  --black: #000000;
+  --black-rich: #0a0a0a;
+  --black-card: #141414;
+  --white: #ffffff;
+
+  /* Grayscale Neutrals */
+  --gray-900: #171717;
+  --gray-800: #262626;
+  --gray-700: #404040;
+  --gray-500: #737373;
+  --gray-300: #d4d4d4;
+  --gray-200: #e5e5e5;
+  --gray-100: #f5f5f5;
+
+  /* Backgrounds */
+  --bg-dark: #000000;
+  --bg-light: #ffffff;
 }
 
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 body {
   margin: 0;
   background: var(--white);
-  color: var(--charcoal);
+  color: var(--black);
   font-family: Inter, sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -47,8 +61,9 @@ ul { margin: 0; padding: 0; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(10, 15, 26, 0.95);
+  background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .nav-container {
   max-width: 1280px;
@@ -69,20 +84,20 @@ ul { margin: 0; padding: 0; }
   letter-spacing: .08em;
   white-space: nowrap;
 }
-.nav-logo span { color: var(--slate-gray); font-weight: 300; }
+.nav-logo span { color: var(--gray-500); font-weight: 300; }
 .nav-dropdown { position: relative; }
 .nav-dropdown:hover .dropdown-menu { display: block; }
 .dropdown-menu {
   display: none;
   position: absolute;
   top: 100%; left: 0;
-  background: var(--deep-navy-black);
+  background: var(--black-rich);
   min-width: 220px;
   border-radius: 8px;
-  box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.4);
   padding: 0.75rem 0;
   margin-top: 0.5rem;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
 }
 .dropdown-menu .dropdown-item {
   display: block;
@@ -90,8 +105,9 @@ ul { margin: 0; padding: 0; }
   color: var(--white);
   text-decoration: none;
   font-size: 0.9375rem;
+  transition: background-color .2s ease, color .2s ease;
 }
-.dropdown-menu .dropdown-item:hover { background: rgba(122, 30, 38, 0.15); color: var(--maroon-red); }
+.dropdown-menu .dropdown-item:hover { background: rgba(255, 255, 255, 0.1); color: var(--white); }
 .nav-menu {
   display: flex;
   align-items: center;
@@ -103,17 +119,25 @@ ul { margin: 0; padding: 0; }
   text-decoration: none;
   font-size: .9375rem;
   opacity: .85;
+  transition: opacity .2s ease, color .2s ease;
 }
-.nav-link:hover { opacity: 1; color: var(--maroon-red); }
-.nav-link.active { opacity: 1; color: var(--maroon-red); font-weight: 500; }
+.nav-link:hover { opacity: 1; color: var(--white); text-decoration: underline; }
+.nav-link.active { opacity: 1; color: var(--white); font-weight: 600; text-decoration: underline; }
 .nav-cta {
   color: #000;
-  background: var(--maroon-red);
+  background: #fff;
+  border: 1px solid #fff;
   border-radius: 6.25rem;
   padding: .7rem 1.5rem;
   text-decoration: none;
   font-size: .9375rem;
   white-space: nowrap;
+  font-weight: 500;
+  transition: all .2s ease;
+}
+.nav-cta:hover {
+  background: #000;
+  color: #fff;
 }
 .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: .5rem; }
 .nav-toggle span {
@@ -125,9 +149,16 @@ ul { margin: 0; padding: 0; }
 
 /* Page Hero */
 .page-hero {
-  background: var(--deep-navy-black);
-  padding: 10rem 0 5rem;
+  background: var(--black-rich);
+  padding: 20rem 0 13rem;
   color: var(--white);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.page-hero.page-hero {
+  background-image: linear-gradient(90deg, rgba(0,0,0,.76), rgba(0,0,0,.42)), url("../img/consulting.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .page-hero .container h1 {
   font-size: 3rem;
@@ -147,11 +178,11 @@ ul { margin: 0; padding: 0; }
 .section-head { max-width: 46rem; margin-bottom: 2.5rem; }
 .section-head h2 {
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 1rem;
-  color: var(--deep-navy-black);
+  color: var(--black);
 }
-.section-head p { font-size: 1rem; line-height: 1.7; color: var(--charcoal); }
+.section-head p { font-size: 1rem; line-height: 1.7; color: var(--gray-700); }
 
 /* Card grid */
 .card-grid {
@@ -161,26 +192,28 @@ ul { margin: 0; padding: 0; }
 }
 .card {
   background: #fff;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.12);
   border-radius: 12px;
   padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
   transition: all 0.3s ease;
 }
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
 }
 .card h3 {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: var(--deep-navy-black);
+  color: var(--black);
 }
 .card p {
   font-size: 0.95rem;
   line-height: 1.65;
-  color: var(--charcoal);
+  color: var(--gray-700);
 }
+#supplier-dev .card p { color: var(--white); }
 .tag-list {
   list-style: none;
   display: flex;
@@ -191,37 +224,38 @@ ul { margin: 0; padding: 0; }
 .tag-list li {
   font-size: 0.8125rem;
   padding: 0.35rem 0.75rem;
-  border: 1px solid var(--light-gray);
+  border: 1px solid var(--gray-300);
   border-radius: 6.25rem;
   white-space: nowrap;
-  color: var(--slate-gray);
+  color: var(--gray-700);
+  background: #fafafa;
 }
 
 /* ISO 9001:2026 specific */
 .iso-step {
   padding: 1.5rem;
-  border-left: 3px solid var(--maroon-red);
+  border-left: 3px solid var(--black);
   margin-bottom: 1rem;
-  background: #f9f9f9;
+  background: #f5f5f5;
   border-radius: 0 8px 8px 0;
 }
 .iso-step h4 {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: var(--deep-navy-black);
+  color: var(--black);
 }
 .iso-step p {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: var(--charcoal);
+  color: var(--gray-700);
   margin: 0;
 }
 
 /* Standards grid */
 .standards-grid .card {
-  background: var(--deep-navy-black);
-  border-color: rgba(255,255,255,0.1);
+  background: var(--black-card);
+  border-color: rgba(255,255,255,0.15);
   color: var(--white);
   padding: 1.5rem;
 }
@@ -231,27 +265,32 @@ ul { margin: 0; padding: 0; }
 /* CTA Strip */
 .cta-strip {
   padding: 4rem 0;
-  background: var(--maroon-red);
+  background: var(--black);
   color: var(--white);
   text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-.cta-strip h2 { font-size: 1.75rem; margin-bottom: 1.5rem; }
+.cta-strip h2 { font-size: 1.75rem; margin-bottom: 1.5rem; color: #fff; }
 .button {
   background: var(--white);
-  color: var(--maroon-red);
+  color: #000;
+  border: 1px solid #fff;
   padding: 1rem 2.5rem;
   border-radius: 6.25rem;
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
+  transition: all 0.3s ease;
 }
-.button:hover { background: var(--light-gray); }
+.button:hover { background: #000; color: #fff; }
 
 /* Footer */
 .footer {
-  background: var(--deep-navy-black);
+  background: var(--black-rich);
   color: var(--white);
   padding: 4rem 0 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 .footer h3 {
   font-size: 1rem;
@@ -269,10 +308,11 @@ ul { margin: 0; padding: 0; }
 .footer-links { list-style: none; }
 .footer-links li { margin-bottom: 0.75rem; }
 .footer-links a {
-  color: var(--slate-gray);
+  color: var(--gray-300);
   text-decoration: none;
+  transition: color .2s ease;
 }
-.footer-links a:hover { color: var(--maroon-red); }
+.footer-links a:hover { color: var(--white); text-decoration: underline; }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.1);
   padding-top: 2rem;
@@ -282,10 +322,11 @@ ul { margin: 0; padding: 0; }
   gap: 1rem;
   flex-wrap: wrap;
   font-size: 0.875rem;
-  color: var(--slate-gray);
+  color: var(--gray-500);
 }
 .footer-bottom nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-.footer-bottom a { color: var(--slate-gray); text-decoration: none; }
+.footer-bottom a { color: var(--gray-300); text-decoration: none; }
+.footer-bottom a:hover { color: var(--white); text-decoration: underline; }
 
 /* Responsive */
 @media (max-width: 991px) {
@@ -295,7 +336,7 @@ ul { margin: 0; padding: 0; }
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
-    background: var(--deep-navy-black);
+    background: var(--black-rich);
     padding: 1.5rem;
     transform: translateY(-10px);
     opacity: 0;
@@ -323,6 +364,9 @@ ul { margin: 0; padding: 0; }
   .footer-bottom { flex-direction: column; text-align: center; gap: 1rem; }
 }
 </style>
+
+<link href="../assets/css/navbar.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/brand-theme.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -330,41 +374,16 @@ ul { margin: 0; padding: 0; }
 <header>
   <nav class="navbar" aria-label="Main navigation">
     <div class="nav-container">
-      <a href="../index.html" class="nav-logo">MARS SIGMA <span>SOLUTIONS</span></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <a href="../index.html" class="nav-logo" aria-label="Mars Sigma Solutions Home"><img src="../img/logoms.png" alt="Mars Sigma Solutions"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
         <span></span><span></span>
       </button>
       <div class="nav-menu" id="nav-menu">
         <a class="nav-link" href="../index.html">Home</a>
-        <div class="nav-dropdown">
-          <a class="nav-link" href="business-transformation.html">Business Transformation<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="business-transformation.html">Overview</a>
-            <a class="dropdown-item" href="business-transformation.html#organisational-restructuring">Organisational Restructuring</a>
-            <a class="dropdown-item" href="business-transformation.html#business-turnaround">Business Turnaround</a>
-            <a class="dropdown-item" href="business-transformation.html#process-systems">Process &amp; Systems</a>
-          </div>
-        </div>
-        <div class="nav-dropdown">
-          <a class="nav-link active" href="consulting.html">Consulting<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item active" href="consulting.html">Overview</a>
-            <a class="dropdown-item" href="#certification">Certification Services</a>
-            <a class="dropdown-item" href="#result-oriented">Result-Oriented Services</a>
-            <a class="dropdown-item" href="#supplier-dev">Supplier Development</a>
-          </div>
-        </div>
+        <a class="nav-link" href="business-transformation.html">Business Transformation</a>
+        <a class="nav-link active" href="consulting.html">Consulting</a>
         <a class="nav-link" href="third-party-inspection.html">Third Party Inspection</a>
-        <div class="nav-dropdown">
-          <a class="nav-link" href="training.html">Training<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="training.html">Overview</a>
-            <a class="dropdown-item" href="training.html#awareness">Awareness</a>
-            <a class="dropdown-item" href="training.html#quality-check">Quality Check</a>
-            <a class="dropdown-item" href="training.html#excellence">Excellence Training</a>
-          </div>
-        </div>
-        <a class="nav-link" href="contact.html">Contact Us</a>
+        <a class="nav-link" href="training.html">Training</a>
         <a class="nav-cta" href="contact.html">Talk to Our Experts</a>
       </div>
     </div>
@@ -374,60 +393,46 @@ ul { margin: 0; padding: 0; }
 <!-- Hero Section -->
 <section class="page-hero">
   <div class="container">
-    <h1>Expert Consulting Services</h1>
-    <p>Strategic consulting for ISO certification, business improvement, and operational excellence.</p>
-  </div>
-</section>
-
-<!-- Introduction -->
-<section class="main-content" id="introduction">
-  <div class="container">
-    <div class="section-head">
-      <h2>Consulting for Sustainable Business Excellence</h2>
-      <p>
-        Our consulting services help organizations establish, maintain, and improve management
-        systems through practical, industry-focused approaches. We go beyond certification to
-        deliver lasting business value.
-      </p>
-    </div>
+    <h1>Consulting for Sustainable Business Excellence</h1>
+    <p>Our consulting services help organizations establish, maintain, and improve management systems through practical, industry-focused approaches. We go beyond certification to deliver lasting business value.</p>
   </div>
 </section>
 
 <!-- Certification Services -->
-<section class="main-content" id="certification" style="background:var(--maroon-red); color:var(--white);">
+<section class="main-content" id="certification" style="background:var(--black); color:var(--white); border-top:1px solid rgba(255,255,255,0.15); border-bottom:1px solid rgba(255,255,255,0.15);">
   <div class="container">
     <div class="section-head" style="color:var(--white);">
       <h2 style="color:var(--white);">Certification Services</h2>
     </div>
     <div class="card-grid">
-      <article class="card" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:var(--white);">
+      <article class="card" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:var(--white);">
         <h3 style="color:var(--white);">ISO 9001 Quality Management</h3>
-        <p>Establish a robust QMS that enhances customer satisfaction and drives continuous improvement.</p>
+        <p style="color:rgba(255,255,255,0.8);">Establish a robust QMS that enhances customer satisfaction and drives continuous improvement.</p>
         <ul class="tag-list" style="margin-top:0.5rem;">
-          <li>Gap Analysis</li>
-          <li>Documentation Support</li>
-          <li>Auditor Training</li>
-          <li>Pre-Audit Support</li>
+          <li style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#fff;">Gap Analysis</li>
+          <li style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#fff;">Documentation Support</li>
+          <li style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#fff;">Auditor Training</li>
+          <li style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#fff;">Pre-Audit Support</li>
         </ul>
       </article>
-      <article class="card" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:var(--white);">
+      <article class="card" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:var(--white);">
         <h3 style="color:var(--white);">ISO 14001 Environmental</h3>
-        <p>Develop environmentally responsible operations that reduce waste and improve sustainability.</p>
+        <p style="color:rgba(255,255,255,0.8);">Develop environmentally responsible operations that reduce waste and improve sustainability.</p>
         <ul class="tag-list" style="margin-top:0.5rem;">
-          <li>EMS Implementation</li>
-          <li>Environmental Aspects</li>
-          <li>Compliance Management</li>
-          <li>Continuous Improvement</li>
+          <li style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#fff;">EMS Implementation</li>
+          <li style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#fff;">Environmental Aspects</li>
+          <li style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#fff;">Compliance Management</li>
+          <li style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#fff;">Continuous Improvement</li>
         </ul>
       </article>
-      <article class="card" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:var(--white);">
+      <article class="card" style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); color:var(--white);">
         <h3 style="color:var(--white);">ISO 45001 Occupational Health</h3>
-        <p>Build a safe workplace that protects employees and reduces workplace injuries.</p>
+        <p style="color:rgba(255,255,255,0.8);">Build a safe workplace that protects employees and reduces workplace injuries.</p>
         <ul class="tag-list" style="margin-top:0.5rem;">
-          <li>Risk Assessment</li>
-          <li>Health & Safety Programs</li>
-          <li>Incident Investigation</li>
-          <li>Continuous Monitoring</li>
+          <li style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#fff;">Risk Assessment</li>
+          <li style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#fff;">Health & Safety Programs</li>
+          <li style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#fff;">Incident Investigation</li>
+          <li style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#fff;">Continuous Monitoring</li>
         </ul>
       </article>
     </div>
@@ -471,18 +476,18 @@ ul { margin: 0; padding: 0; }
     </div>
     <div class="card-grid">
       <article class="card">
-        <span class="card-num" style="color:var(--maroon-red); font-weight:600;">IMPLEMENTATION</span>
+        <span class="card-num" style="color:var(--black); font-weight:700;">IMPLEMENTATION</span>
         <h3>Hands-On Implementation</h3>
         <p>Our consultants work alongside your team to implement systems that work in practice, not just on paper.</p>
       </article>
       <article class="card">
-        <span class="card-num" style="color:var(--maroon-red); font-weight:600;">CAPACITY BUILDING</span>
+        <span class="card-num" style="color:var(--black); font-weight:700;">CAPACITY BUILDING</span>
         <h3>Team Capability Development</h3>
         <p>Build internal capability through training, mentoring, and knowledge transfer to your staff.</p>
       </article>
       <article class="card">
-        <span class="card-num" style="color:var(--maroon-red); font-weight:600;">SUSTAINABILITY</span>
-        <h3>Sustainable Excellence</h3>
+        <span class="card-num" style="color:var(--black); font-weight:700;">SUSTAINABILITY</span>
+        <h3 id="sustenance">Sustainable Excellence</h3>
         <p>Establish systems and processes that continue delivering results long after our engagement ends.</p>
       </article>
     </div>
@@ -490,7 +495,7 @@ ul { margin: 0; padding: 0; }
 </section>
 
 <!-- Supplier Development -->
-<section class="main-content" id="supplier-dev" style="background:var(--maroon-red); color:var(--white);">
+<section class="main-content" id="supplier-dev" style="background:var(--black); color:var(--white); border-top:1px solid rgba(255,255,255,0.15); border-bottom:1px solid rgba(255,255,255,0.15);">
   <div class="container">
     <div class="section-head" style="color:var(--white);">
       <h2 style="color:var(--white);">Supplier Development &amp; Quality Improvement</h2>
@@ -537,7 +542,7 @@ ul { margin: 0; padding: 0; }
   <div class="container">
     <h2>Need Expert Consulting? Talk to Our Consultants.</h2>
     <p style="margin-bottom:1.5rem;">Get practical solutions tailored to your business needs.</p>
-    <a href="../contact.html" class="button">Talk to a Consultant</a>
+    <a href="contact.html" class="button">Talk to a Consultant</a>
   </div>
 </section>
 
@@ -570,13 +575,13 @@ ul { margin: 0; padding: 0; }
       </div>
       <div>
         <h3>Contact Us</h3>
-        <p style="margin-bottom:0.5rem;">+91 94440 84652</p>
+        <p style="margin-bottom:0.5rem;"><a href="https://wa.me/919444084652" target="_blank" rel="noopener noreferrer">+91 94440 84652</a></p>
         <p style="margin-bottom:0.5rem;">info@marssigma.com</p>
         <p>India | Bahrain</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© 2026 Mars Sigma Solutions Pvt Ltd. All rights reserved.</div>
+      <div>Â© 2026 Mars Sigma Solutions Pvt Ltd. All rights reserved.</div>
       <nav aria-label="Legal">
         <a href="../pages/privacy.html">Privacy</a>
         <a href="../pages/terms.html">Terms</a>
@@ -598,5 +603,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script src="../assets/js/main.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" defer></script>
+<script src="../assets/js/scroll-smoother.js" defer></script>
 </body>
 </html>

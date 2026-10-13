@@ -1,6 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="../assets/css/typography.css" rel="stylesheet">
 <meta charset="utf-8">
 <title>Privacy Notice - Mars Sigma Solutions Pvt Ltd</title>
 <meta name="description" content="Privacy notice for Mars Sigma Solutions Pvt Ltd.">
@@ -11,24 +13,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link href="../assets/css/subpage.css" rel="stylesheet">
 <style>
-:root {
-  --maroon-red: #7A1E26;
-  --ink-blue: #0F2747;
-  --deep-navy-black: #0A0F1A;
-  --charcoal: #2B2B2B;
-  --slate-gray: #6B7280;
-  --light-gray: #E5E7EB;
-}
-
 /* Override for this page only */
-.nav-link.active { text-decoration:none; }
+.nav-link.active { text-decoration:underline; font-weight:600; }
 .page-hero { padding:8rem 0 3rem; }
 .page-hero h1 { font-size:2.5rem; }
-.content h2 { margin-bottom:1.25rem; color:var(--deep-navy-black); }
-.content p { color:var(--charcoal); }
-.content a { color:var(--maroon-red); }
-.content a:hover { text-decoration:underline; }
+.content h2 { margin-bottom:1.25rem; color:var(--black); }
+.content p { color:var(--gray-800); }
+.content a { color:var(--black); font-weight:500; text-decoration:underline; }
+.content a:hover { color:var(--gray-700); }
 </style>
+
+<link href="../assets/css/navbar.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/brand-theme.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -36,41 +32,17 @@
 <header>
   <nav class="navbar" aria-label="Main navigation">
     <div class="nav-container">
-      <a href="../index.html" class="nav-logo">MARS SIGMA <span>SOLUTIONS</span></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <a href="../index.html" class="nav-logo" aria-label="Mars Sigma Solutions Home"><img src="../img/logoms.png" alt="Mars Sigma Solutions"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
         <span></span><span></span>
       </button>
       <div class="nav-menu" id="nav-menu">
         <a class="nav-link" href="../index.html">Home</a>
-        <div class="nav-dropdown">
-          <a class="nav-link" href="business-transformation.html">Business Transformation<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="business-transformation.html">Overview</a>
-            <a class="dropdown-item" href="business-transformation.html#organisational-restructuring">Organisational Restructuring</a>
-            <a class="dropdown-item" href="business-transformation.html#business-turnaround">Business Turnaround</a>
-            <a class="dropdown-item" href="business-transformation.html#process-systems">Process &amp; Systems</a>
-          </div>
-        </div>
-        <div class="nav-dropdown">
-          <a class="nav-link" href="consulting.html">Consulting<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="consulting.html">Overview</a>
-            <a class="dropdown-item" href="consulting.html#certification">Certification Services</a>
-            <a class="dropdown-item" href="consulting.html#result-oriented">Result-Oriented Services</a>
-            <a class="dropdown-item" href="consulting.html#supplier-dev">Supplier Development</a>
-          </div>
-        </div>
+        <a class="nav-link" href="business-transformation.html">Business Transformation</a>
+        <a class="nav-link" href="consulting.html">Consulting</a>
         <a class="nav-link" href="third-party-inspection.html">Third Party Inspection</a>
-        <div class="nav-dropdown">
-          <a class="nav-link" href="training.html">Training<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="training.html">Overview</a>
-            <a class="dropdown-item" href="training.html#awareness">Awareness</a>
-            <a class="dropdown-item" href="training.html#quality-check">Quality Check</a>
-            <a class="dropdown-item" href="training.html#excellence">Excellence Training</a>
-          </div>
-        </div>
-        <a class="nav-link" href="contact.html">Contact Us</a>
+        <a class="nav-link" href="training.html">Training</a>
+        <a class="nav-cta" href="contact.html">Talk to Our Experts</a>
       </div>
     </div>
   </nav>
@@ -173,7 +145,7 @@
     </p>
     <p>
       <strong>Email:</strong> <a href="mailto:info@marssigma.com">info@marssigma.com</a><br>
-      <strong>Phone:</strong> +91 94440 84652<br>
+      <strong>Phone:</strong> <a href="https://wa.me/919444084652" target="_blank" rel="noopener noreferrer">+91 94440 84652</a><br>
       <strong>Location:</strong> India | Bahrain
     </p>
   </div>
@@ -182,7 +154,7 @@
 <!-- Footer -->
 <footer class="footer">
   <div class="container footer-bottom">
-    <div>© 2026 Mars Sigma Solutions Pvt Ltd. All rights reserved.</div>
+    <div>Â© 2026 Mars Sigma Solutions Pvt Ltd. All rights reserved.</div>
     <nav aria-label="Legal">
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
@@ -203,5 +175,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script src="../assets/js/main.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" defer></script>
+<script src="../assets/js/scroll-smoother.js" defer></script>
 </body>
 </html>

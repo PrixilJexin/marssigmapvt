@@ -1,24 +1,26 @@
 /**
- * Mars Sigma Solutions — Brand Styles
- * Using brand colors from colourpalatte.jpeg:
- * - Maroon Red: #7A1E26
- * - Ink Blue: #0F2747
- * - White: #FFFFFF
- * - Neutral: #0A0F1A, #2B2B2B, #6B7280, #E5E7EB, #F8F876
+ * Mars Sigma Solutions — Black & White Theme
  */
 
 :root {
-  /* Primary brand colors */
-  --maroon-red: #7A1E26;
-  --ink-blue: #0F2747;
-  --white: #FFFFFF;
+  /* Black & White Palette */
+  --black: #000000;
+  --black-rich: #0a0a0a;
+  --black-card: #141414;
+  --white: #ffffff;
 
-  /* Neutral colors */
-  --deep-navy-black: #0A0F1A;
-  --charcoal: #2B2B2B;
-  --slate-gray: #6B7280;
-  --light-gray: #E5E7EB;
-  --off-white: #F8F876;
+  /* Grayscale Neutrals */
+  --gray-900: #171717;
+  --gray-800: #262626;
+  --gray-700: #404040;
+  --gray-500: #737373;
+  --gray-300: #d4d4d4;
+  --gray-200: #e5e5e5;
+  --gray-100: #f5f5f5;
+
+  /* Backgrounds */
+  --bg-dark: #000000;
+  --bg-light: #ffffff;
 }
 
 /* ========== Section scaffolding ========== */
@@ -27,32 +29,34 @@
 }
 
 .ms-section.dark {
-  background-color: var(--deep-navy-black);
+  background-color: var(--black);
   color: var(--white);
 }
 
 .ms-section.light {
   background-color: var(--white);
-  color: var(--charcoal);
+  color: var(--black);
 }
 
 .ms-section.accent {
-  background-color: var(--maroon-red);
+  background-color: var(--black);
   color: var(--white);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .ms-eyebrow {
-  color: var(--maroon-red);
+  color: var(--black);
   font-size: 0.875rem;
   letter-spacing: 0.125em;
   text-transform: uppercase;
   margin: 0 0 1rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .ms-section.dark .ms-eyebrow,
 .ms-section.accent .ms-eyebrow {
-  color: var(--light-gray);
+  color: var(--gray-300);
 }
 
 .ms-lead {
@@ -80,21 +84,23 @@
 /* ========== Cards ========== */
 .ms-card {
   background: var(--white);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 0.75rem;
   padding: 2rem 1.75rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
 .ms-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
 .ms-card .ms-card-num {
   font-size: 0.8125rem;
   letter-spacing: 0.1em;
-  color: var(--maroon-red);
+  color: var(--black);
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 
@@ -102,12 +108,14 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0 0 1rem;
+  color: var(--black);
 }
 
 .ms-card p {
   font-size: 0.95rem;
   line-height: 1.6;
   margin: 0 0 1.25rem;
+  color: var(--gray-700);
 }
 
 /* ========== Tag list ========== */
@@ -126,10 +134,14 @@
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6.25rem;
   white-space: nowrap;
+  background: #fafafa;
+  color: var(--gray-800);
 }
 
 .ms-section.dark .ms-tags li {
   border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--gray-300);
 }
 
 /* ========== ISO 9001:2026 transition steps ========== */
@@ -151,7 +163,7 @@
 .ms-step .ms-step-num {
   font-size: 0.8125rem;
   letter-spacing: 0.1em;
-  color: var(--light-gray);
+  color: var(--gray-300);
   display: block;
   margin-bottom: 0.5rem;
 }
@@ -176,18 +188,25 @@
 
 .ms-card .ms-media-caption h3 {
   margin-bottom: 0.25rem;
+  color: var(--black);
 }
 
 .ms-card .ms-media-caption p {
   margin: 0;
   font-size: 0.9rem;
+  color: var(--gray-700);
 }
 
 /* ========== Standards grid ========== */
 .ms-standards .ms-card {
   padding: 1.5rem 1.25rem;
   text-align: left;
-  background: var(--deep-navy-black);
+  background: var(--black-card);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.ms-standards .ms-card h3 {
+  color: var(--white);
 }
 
 .ms-standards .ms-card p {
@@ -211,7 +230,7 @@
 
 .ms-founder .ms-card {
   background: transparent;
-  border: 1px solid var(--light-gray);
+  border: 1px solid var(--gray-300);
 }
 
 .ms-founder ul {
@@ -224,11 +243,12 @@
   padding: 0.75rem 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   font-size: 0.95rem;
+  color: var(--gray-800);
 }
 
 /* ========== Placeholder imagery ========== */
 .ms-ph {
-  background: linear-gradient(135deg, var(--deep-navy-black), var(--ink-blue));
+  background: linear-gradient(135deg, #0a0a0a, #262626);
   position: relative;
   overflow: hidden;
 }
@@ -245,11 +265,11 @@
 }
 
 .ms-ph.warm {
-  background: linear-gradient(135deg, #232427, #0A0F1A);
+  background: linear-gradient(135deg, #111111, #222222);
 }
 
 .ms-ph.light {
-  background: linear-gradient(135deg, var(--light-gray), #9aa5a1);
+  background: linear-gradient(135deg, #f5f5f5, #e5e5e5);
 }
 
 /* ========== Mobile responsiveness ========== */

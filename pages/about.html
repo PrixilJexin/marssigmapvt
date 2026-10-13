@@ -1,6 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="../assets/css/typography.css" rel="stylesheet">
 <meta charset="utf-8">
 <title>About Us - Mars Sigma Solutions Pvt Ltd</title>
 <meta name="description" content="Mars Sigma Solutions Pvt Ltd is a professional consulting and industrial services organization helping businesses achieve excellence through management systems, process improvement and technical expertise.">
@@ -11,34 +13,42 @@
 <link href="../assets/css/main.css" rel="stylesheet" type="text/css">
 <style>
 *, *::before, *::after { box-sizing: border-box; }
-:root { --black-3:#020e12; --black-4:#11262a; --light-grey:#d2d7d5; --midnight-blue:#001d7c; }
+:root {
+  --black: #000000;
+  --black-rich: #0a0a0a;
+  --white: #ffffff;
+  --gray-700: #404040;
+  --gray-500: #737373;
+  --gray-300: #d4d4d4;
+}
 html { scroll-behavior: smooth; }
 body { margin:0; background:#fff; color:#000; font-family:Inter, sans-serif; font-size:16px; line-height:1.5; }
 h1,h2,h3,p { margin:0; }
 .container { max-width:1280px; margin:0 auto; padding:0 1.5rem; }
-.navbar { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(2,14,18,.92); }
+.navbar { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(0,0,0,.95); border-bottom:1px solid rgba(255,255,255,0.1); }
 .nav-container { max-width:1280px; margin:0 auto; padding:0 1.5rem; height:4.5rem; display:flex; align-items:center; justify-content:space-between; gap:2rem; }
 .nav-logo { color:#fff; text-decoration:none; font-size:1.0625rem; font-weight:600; letter-spacing:.08em; }
-.nav-logo span { color:var(--light-grey); font-weight:300; }
+.nav-logo span { color:var(--gray-500); font-weight:300; }
 .nav-menu { display:flex; align-items:center; gap:1.75rem; list-style:none; }
 .nav-link { color:#fff; text-decoration:none; font-size:.9375rem; opacity:.85; white-space:nowrap; }
-.nav-link:hover { opacity:1; }
-.nav-cta { color:#000; background:#fff; border-radius:6.25rem; padding:.7rem 1.5rem; text-decoration:none; font-size:.9375rem; }
-.page-hero { background:var(--black-3); padding:10rem 0 4rem; }
+.nav-link:hover { opacity:1; text-decoration:underline; }
+.nav-cta { color:#000; background:#fff; border:1px solid #fff; border-radius:6.25rem; padding:.7rem 1.5rem; text-decoration:none; font-size:.9375rem; font-weight:500; transition:all .2s ease; }
+.nav-cta:hover { background:#000; color:#fff; }
+.page-hero { background:var(--black-rich); padding:10rem 0 4rem; border-bottom:1px solid rgba(255,255,255,0.1); }
 .page-hero h1 { color:#fff; font-size:3rem; font-weight:300; line-height:1.15; max-width:24ch; }
 .page-hero p { color:rgba(255,255,255,.85); font-size:1.125rem; line-height:1.6; margin-top:1.25rem; max-width:46rem; }
 .content { padding:6.25rem 0; }
-.content h2 { font-size:2rem; font-weight:400; margin-bottom:1.5rem; }
-.content p { line-height:1.7; margin-bottom:1.25rem; max-width:46rem; }
+.content h2 { font-size:2rem; font-weight:500; margin-bottom:1.5rem; color:#000; }
+.content p { line-height:1.7; margin-bottom:1.25rem; max-width:46rem; color:var(--gray-700); }
 .stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:3.5rem; }
-.stat { border-top:2px solid var(--black-3); padding-top:1.25rem; }
-.stat .stat-num { font-size:2.5rem; font-weight:600; }
-.stat .stat-label { font-size:.875rem; color:rgba(255,255,255,.75); margin-top:.25rem; }
-.footer { background:var(--black-3); color:#fff; padding:3rem 0; }
+.stat { border-top:2px solid var(--black); padding-top:1.25rem; }
+.stat .stat-num { font-size:2.5rem; font-weight:600; color:var(--black); }
+.stat .stat-label { font-size:.875rem; color:var(--gray-500); margin-top:.25rem; }
+.footer { background:var(--black-rich); color:#fff; padding:3rem 0; border-top:1px solid rgba(255,255,255,0.1); }
 .footer-bottom { font-size:.875rem; color:rgba(255,255,255,.7); }
 .footer-bottom a { color:inherit; }
 @media (max-width:991px){
-  .nav-menu { position:fixed; top:4.5rem; left:0; right:0; flex-direction:column; align-items:flex-start; gap:1rem; background:rgba(2,14,18,.97); padding:1.5rem; opacity:0; pointer-events:none; transition:opacity .3s; }
+  .nav-menu { position:fixed; top:4.5rem; left:0; right:0; flex-direction:column; align-items:flex-start; gap:1rem; background:var(--black-rich); padding:1.5rem; opacity:0; pointer-events:none; transition:opacity .3s; }
   .nav-menu-open { opacity:1; pointer-events:auto; }
   .nav-toggle { display:block; background:none; border:0; cursor:pointer; }
   .nav-toggle span { display:block; width:1.5rem; height:2px; background:#fff; margin:5px 0; }
@@ -47,21 +57,24 @@ h1,h2,h3,p { margin:0; }
 }
 @media (min-width:992px){ .nav-toggle { display:none; } }
 </style>
+
+<link href="../assets/css/navbar.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/brand-theme.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <header>
   <nav class="navbar" aria-label="Main navigation">
     <div class="nav-container">
-      <a href="../index.html" class="nav-logo" aria-label="Mars Sigma Solutions — Home">MARS SIGMA <span>SOLUTIONS</span></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span></span><span></span></button>
+      <a href="../index.html" class="nav-logo" aria-label="Mars Sigma Solutions Home"><img src="../img/logoms.png" alt="Mars Sigma Solutions"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
       <div class="nav-menu" id="nav-menu">
         <a class="nav-link" href="../index.html">Home</a>
-        <a class="nav-link" href="about.html">About</a>
-        <a class="nav-link" href="services.html">Services</a>
-        <a class="nav-link" href="industries.html">Industries</a>
-        <a class="nav-link" href="iso-9001-2026.html">ISO 9001:2026</a>
-        <a class="nav-link" href="founder.html">Founder</a>
-        <a class="nav-link" href="how-we-work.html">How We Work</a>
+        <a class="nav-link" href="business-transformation.html">Business Transformation</a>
+        <a class="nav-link" href="consulting.html">Consulting</a>
+        <a class="nav-link" href="third-party-inspection.html">Third Party Inspection</a>
+        <a class="nav-link" href="training.html">Training</a>
         <a class="nav-cta" href="contact.html">Talk to Our Experts</a>
       </div>
     </div>
@@ -71,7 +84,7 @@ h1,h2,h3,p { margin:0; }
 <section class="page-hero">
   <div class="container">
     <h1>Your Trusted Partner in Quality, Compliance &amp; Operational Excellence</h1>
-    <p>Mars Sigma Solutions Pvt Ltd — India | Bahrain</p>
+    <p>Mars Sigma Solutions Pvt Ltd â€” India | Bahrain</p>
   </div>
 </section>
 
@@ -97,7 +110,7 @@ h1,h2,h3,p { margin:0; }
       challenges and develop management systems that deliver lasting value.
     </p>
     <p>
-      At Mars Sigma, our commitment goes beyond compliance — we help businesses perform better, every day.
+      At Mars Sigma, our commitment goes beyond compliance â€” we help businesses perform better, every day.
     </p>
 
     <!-- Figures below need confirmation with Mars Sigma before publication (per content spec). -->
@@ -112,11 +125,13 @@ h1,h2,h3,p { margin:0; }
 
 <footer class="footer">
   <div class="container footer-bottom">
-    <div>© 2026 Mars Sigma Solutions Pvt Ltd. All rights reserved.</div>
-    <nav aria-label="Legal"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></nav>
+    <div>Â© 2026 Mars Sigma Solutions Pvt Ltd. All rights reserved.</div>
+    <nav aria-label="Legal"><a href="privacy.html">Privacy</a> Â· <a href="terms.html">Terms</a></nav>
   </div>
 </footer>
 
 <script src="../assets/js/main.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" defer></script>
+<script src="../assets/js/scroll-smoother.js" defer></script>
 </body>
 </html>
