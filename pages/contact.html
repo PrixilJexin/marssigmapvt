@@ -296,7 +296,10 @@ ul { margin: 0; padding: 0; }
   justify-content: center;
   color: var(--white);
   border: 1px solid rgba(255,255,255,0.1);
+  text-decoration: none;
+  transition: background .2s ease, transform .2s ease;
 }
+.map-placeholder:hover { background: linear-gradient(135deg, #292929, #414141); transform: translateY(-2px); }
 .map-placeholder h4 {
   font-size: 1.5rem;
   font-weight: 300;
@@ -550,12 +553,12 @@ ul { margin: 0; padding: 0; }
 
     <!-- Map Section -->
     <div class="map-section">
-      <h3 style="margin-bottom:1rem; color:var(--black);">Our Locations</h3>
-      <div class="map-placeholder">
-        <h4>India & Bahrain Location Map</h4>
-      </div>
+      <h3 style="margin-bottom:1rem; color:var(--black);">Our Office Location</h3>
+      <a class="map-placeholder" href="https://maps.app.goo.gl/bA8CMLBNhGpFohx48" target="_blank" rel="noopener noreferrer" aria-label="View Mars Sigma office location on Google Maps">
+        <h4>View Our Office on Google Maps ↗</h4>
+      </a>
       <p style="margin-top:1rem; font-size:0.875rem; color:var(--gray-500);">
-        * Interactive map placeholder. Please contact us for specific office addresses.
+        Open the map to view directions to our office.
       </p>
     </div>
   </div>
