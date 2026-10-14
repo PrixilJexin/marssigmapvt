@@ -2,7 +2,6 @@
 #turnaround { overflow: hidden; }
 #turnaround .section-head { margin-bottom: 1.25rem; }
 #turnaround .turn-section { color: var(--charcoal); }
-#turnaround .is-placeholder { display: inline-block; padding: .2rem .4rem; border: 1px dashed #81777a; border-radius: 4px; color: #595959; background: #faf8f8; }
 #turnaround .turn-journey { width: fit-content; max-width: 100%; margin: 0 auto 3rem; padding: .5rem .75rem; display: flex; align-items: center; justify-content: center; gap: .55rem; list-style: none; border: 1px solid #e1e5ea; border-radius: 99px; background: #f7f8fa; color: var(--ink-blue); font-size: .8rem; font-weight: 700; }
 #turnaround .turn-journey li:nth-child(odd) { padding: .45rem .8rem; border-radius: 99px; background: #fff; }
 #turnaround .turn-journey li[aria-hidden="true"] { color: var(--maroon); font-size: 1rem; }

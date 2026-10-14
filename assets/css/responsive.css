@@ -99,7 +99,6 @@ pre { max-width: 100%; overflow-x: auto; }
   .new-card-grid,
   .iso-grid,
   .success-grid,
-  .testimonial-grid { grid-template-columns: minmax(0, 1fr); }
   .card,
   .service-card,
   .training-card,

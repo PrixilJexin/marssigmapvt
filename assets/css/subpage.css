@@ -120,3 +120,5 @@ li { line-height:1.6; }
   .page-hero h1 { font-size:2rem; }
   .cta-strip .container { flex-direction:column; text-align:center; }
 }
+
+[hidden] { display:none !important; }

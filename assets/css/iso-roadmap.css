@@ -5,7 +5,6 @@
 .iso-intro h2 { margin: 0 0 1rem; color: var(--iso-ink); font-size: clamp(1.8rem,3vw,2.5rem); line-height: 1.2; }
 .iso-intro-copy { max-width: 46rem; margin: 0 auto .8rem; color: #34445a; font-size: 1.04rem; line-height: 1.7; }
 .iso-disclaimer { max-width: 46rem; margin: 0 auto; color: #526176; font-size: .84rem; line-height: 1.55; }
-.iso-roadmaps .is-placeholder { border-bottom: 1px dashed #7c8999; }
 .iso-nav { position: relative; z-index: 2; width: fit-content; max-width: 100%; margin: 1.7rem auto 2rem; padding: .45rem .9rem; display: flex; align-items: center; gap: .75rem; border: 1px solid #d9e0e8; border-radius: 999px; background: rgba(255,255,255,.92); box-shadow: 0 5px 18px rgba(23,42,70,.07); color: #758195; }
 .iso-nav-link { padding: .38rem .68rem; border-radius: 999px; color: #42536a; font-size: .8rem; font-weight: 650; text-decoration: none; transition: color .2s ease,background .2s ease; }
 .iso-nav-link:hover,.iso-nav-link:focus-visible { color: #fff; background: #294a74; }
